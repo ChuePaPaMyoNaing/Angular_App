@@ -1,5 +1,13 @@
 <a routerLink="/">Back</a>
 <br>
-<input [(ngModel)]="siteName" placeholder="Site Name">
-<input [(ngModel)]="siteURL" placeholder="Site URL">
-<button (click)="editSite()">EDIT</button>
+<div class="card">
+    <div class="card-body">
+        <div class="mb-3">
+            <input [(ngModel)]="siteName" placeholder="Site Name" class="form-control">
+        </div>
+        <div class="mb-3">
+            <input [(ngModel)]="siteURL" placeholder="Site URL" class="form-control">
+        </div>
+        <button (click)="editSite()" class="btn btn-primary">EDIT</button>    
+    </div>    
+</div>
