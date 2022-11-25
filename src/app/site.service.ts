@@ -19,6 +19,10 @@ export class SiteService {
     return this.http.get<Site[]>(apiUrl);
   }
 
+  getSite(id: string): Observable<Site> {
+    return this.http.get<Site>(`${apiUrl}/${id}`);
+  }
+
   createSite(siteInfo: Site):Observable<Site> {
     const body = JSON.stringify(siteInfo);
     return this.http.post<Site>(apiUrl, body, httpOptions);
@@ -29,7 +33,7 @@ export class SiteService {
     return this.http.put<Site>(`${apiUrl}/${id}`, body, httpOptions);
   }
 
-  deleteSite(id: string) {
+  deleteSite(id: number) {
     return this.http.delete(`${apiUrl}/${id}`);
   }
 }
